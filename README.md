@@ -85,9 +85,4 @@ assert_eq!(solver.solve(&position, false), 11);
 ## Documentation
 
 - `docs/` contains guides to using the solver and benchmarks.
-- `notes/` contains detailed explanations of the algorithms and source code.
-
-## License
-
-This project is licensed under the GNU Affero General Public License v3.0 or
-later. See `LICENSE`.
+- `notes/` contains detailed explanations of the algorithms and source code. See [notes/README.md](notes/README.md) for an overview of the notes and how to navigate them.
