@@ -23,9 +23,8 @@ find that it is roughly the same speed as the original C++ solver.
 ## Build And Test
 
 ```sh
-cargo build
-cargo test
 cargo build --release
+cargo test --release
 ```
 
 Release builds use link-time optimization because the solver's hot path benefits
@@ -33,44 +32,38 @@ measurably from whole-program optimization.
 
 ## Command Line
 
+This repo defines Cargo aliases in `.cargo/config.toml` for the release-mode
+tools. For example, `cargo solver -a` expands to
+`cargo run --release --bin exact_connect4_solver -- -a`.
+
 Get help for the solver:
 
 ```sh
-cargo run --release --bin exact_connect4_solver -- --help
-```
-or
-
-```sh
-./target/release/exact_connect4_solver --help
+cargo solver --help
 ```
 
 Solve one position:
 
 ```sh
-echo 32164625 | cargo run --release --bin exact_connect4_solver
+echo 32164625 | cargo solver
 ```
 
 Analyze every column:
 
 ```sh
-echo 32164625 | cargo run --release --bin exact_connect4_solver -- -a
+echo 32164625 | cargo solver -a
 ```
 
 Get help for the softmax match tool:
 
 ```sh
-cargo run --release --bin softmax_match -- --help
-```
-or
-
-```sh
-./target/release/softmax_match --help
+cargo softmax_match --help
 ```
 
 Generate unique non-terminal sequences through depth 2:
 
 ```sh
-cargo run --release --bin generator -- 2
+cargo generator 2
 ```
 
 See `docs/command_line_solver.md` and `docs/benchmarking.md` for more examples.

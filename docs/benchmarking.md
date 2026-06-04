@@ -44,7 +44,7 @@ The `generator` tool can print unique non-terminal move sequences through a
 requested depth:
 
 ```sh
-cargo run --release --bin generator -- 2
+cargo generator 2
 ```
 
 Depth `0` prints the empty starting sequence. Depth `1` prints the empty
@@ -57,7 +57,7 @@ lines from stdin and writes `7x6.book` in the current directory:
 
 ```sh
 awk '{ print $1, $2 }' tests/fixtures/benchmarks/Test_L1_R1 \
-  | cargo run --release --bin generator
+  | cargo generator
 ```
 
 The root-level generated `7x6.book` is ignored by Git. The tracked default book

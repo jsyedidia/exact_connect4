@@ -12,7 +12,7 @@ cargo build --release --bin exact_connect4_solver
 ## Solve Positions
 
 ```sh
-echo 32164625 | cargo run --release --bin exact_connect4_solver
+echo 32164625 | cargo solver
 ```
 
 Output has the input sequence followed by the perfect-play score:
@@ -24,7 +24,7 @@ Output has the input sequence followed by the perfect-play score:
 You can also pipe a file of sequences:
 
 ```sh
-cargo run --release --bin exact_connect4_solver < tests/fixtures/positions/Seq_L1_R1
+cargo solver < tests/fixtures/positions/Seq_L1_R1
 ```
 
 ## Analyze Every Column
@@ -32,7 +32,7 @@ cargo run --release --bin exact_connect4_solver < tests/fixtures/positions/Seq_L
 Use `-a` to print one score per column:
 
 ```sh
-echo 177322644317353514472267227353611516544566 | cargo run --release --bin exact_connect4_solver -- -a
+echo 177322644317353514472267227353611516544566 | cargo solver -a
 ```
 
 The first field is the input sequence. The next seven fields are scores for
@@ -43,7 +43,7 @@ columns 1 through 7. Illegal columns are reported as `-1000`.
 Use `-w` when only the win/draw/loss result matters:
 
 ```sh
-echo 32164625 | cargo run --release --bin exact_connect4_solver -- -w
+echo 32164625 | cargo solver -w
 ```
 
 Weak scores are in `-1..=1`.
@@ -54,7 +54,7 @@ By default, the solver uses the tracked `data/books/7x6.book` opening book
 embedded in the crate. To load a compatible book file from disk:
 
 ```sh
-echo 32164625 | cargo run --release --bin exact_connect4_solver -- -b data/books/7x6.book
+echo 32164625 | cargo solver -b data/books/7x6.book
 ```
 
 If the requested book cannot be loaded, the binary prints an error to stderr and

@@ -1,0 +1,4 @@
+[alias]
+solver = "run --release --bin exact_connect4_solver --"
+softmax_match = "run --release --bin softmax_match --"
+generator = "run --release --bin generator --"
