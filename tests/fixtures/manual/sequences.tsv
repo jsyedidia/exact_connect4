@@ -1,0 +1,7 @@
+# category	sequence	description
+valid_tiny	4453	Short valid sequence used for parser smoke tests.
+invalid_digit	1238	Digit outside the 1-based Connect4 column range.
+invalid_character	12a4	Non-digit move character.
+full_column	1111111	Seven moves in one column overfill a 6-high board.
+early_win	1212121	Player 1 would complete a vertical four on the final move.
+draw_full_board	177322644317353514472267227353611516544566	Full 42-ply board with no winner.
