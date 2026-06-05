@@ -108,22 +108,17 @@ command-line tools are wired.
     lookup, and opening-book errors.
 17. **[src/bin/exact_connect4_solver.rs.md](src/bin/exact_connect4_solver.rs.md)** - The command-line solver frontend.
 
-The external user guides are:
-
-18. **[../docs/command_line_solver.md](../docs/command_line_solver.md)** - Command-line examples.
-19. **[../docs/benchmarking.md](../docs/benchmarking.md)** - Fixture checks and benchmark-file usage.
-
 ### 6. Gameplay Utilities And Tools
 
 These notes cover code built on top of the exact solver.
 
-20. **[concepts/softmax_bots.md](concepts/softmax_bots.md)** - How exact solver scores become greedy or
+18. **[concepts/softmax_bots.md](concepts/softmax_bots.md)** - How exact solver scores become greedy or
     probabilistic move choices.
-21. **[src/softmax_bot.rs.md](src/softmax_bot.rs.md)** - Turning exact move scores into greedy or
+19. **[src/softmax_bot.rs.md](src/softmax_bot.rs.md)** - Turning exact move scores into greedy or
     softmax probabilities.
-22. **[src/bin/softmax_match.rs.md](src/bin/softmax_match.rs.md)** - Running matches between two softmax
+20. **[src/bin/softmax_match.rs.md](src/bin/softmax_match.rs.md)** - Running matches between two softmax
     bots.
-23. **[src/bin/generator.rs.md](src/bin/generator.rs.md)** - Generating unique sequence inputs or a
+21. **[src/bin/generator.rs.md](src/bin/generator.rs.md)** - Generating unique sequence inputs or a
     compatible book file from scored positions.
 
 ## Tips For Reading
@@ -143,10 +138,6 @@ These notes cover code built on top of the exact solver.
   small private functions such as mask builders, score encoders, and table
   lookup helpers. Source notes explain those because they are part of the real
   implementation, even when they are not public API.
-
-- **Treat benchmark numbers as local measurements.** Concept notes explain
-  stable performance ideas. Machine-dependent timing logs should not be read as
-  universal claims.
 
 ## Related Project Documents
 
